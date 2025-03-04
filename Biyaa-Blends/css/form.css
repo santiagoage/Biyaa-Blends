@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #D2B48C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.formulario {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(210, 180, 140, 0.2);
+}
+
+.formulario h1 {
+    text-align: center;
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.username {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.username input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.938rem;
+    border: 1px solid #D2B48C;
+    border-radius: 0.5rem;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.username label {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.938rem;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.username input:focus,
+.username input:valid {
+    border-color: #90EE90;
+}
+
+.username input:focus ~ label,
+.username input:valid ~ label {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0 0.25rem;
+    background: #fff;
+    color: #90EE90;
+}
+
+.recordar {
+    color: #90EE90;
+    font-size: 0.875rem;
+    text-align: right;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.recordar:hover {
+    color: #32CD32;
+}
+
+.registrarse {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.registrarse a {
+    color: #90EE90;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.registrarse a:hover {
+    color: #32CD32;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background-color: #90EE90;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.938rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: capitalize;
+}
+
+input[type="submit"]:hover {
+    background-color: #32CD32;
+}
+
+/* Nuevo estilo para el botón de regresar */
+.regresar {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.btn-regresar {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #D2B48C;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.btn-regresar:hover {
+    background-color: #C4A484;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media screen and (max-width: 320px) {
+    .formulario {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .formulario h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-regresar {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .formulario {
+        padding: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .formulario {
+        padding: 3rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .formulario {
+        max-width: 450px;
+    }
+    
+    .username input {
+        padding: 1rem;
+    }
+}

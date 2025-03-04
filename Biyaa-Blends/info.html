@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fff;
+            background-image: linear-gradient(120deg, #D2B48C 0%, #D2B48C 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/100/100');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        h2 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #D2B48C;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #90EE90;
+            box-shadow: 0 0 0 3px rgba(144, 238, 144, 0.2);
+            background-color: white;
+        }
+
+        button {
+            background-color: #90EE90;
+            color: #000000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 0.5rem;
+        }
+
+        button:hover {
+            background-color: #32CD32;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        .button-secondary {
+            background-color: #D2B48C;
+        }
+
+        .button-secondary:hover {
+            background-color: #bc9f7d;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #D2B48C;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        .form-container::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        #post-submit-options {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        #post-submit-options button {
+            margin: 0.5rem 0;
+        }
+
+        #mensaje-exito {
+            display: none;
+            text-align: center;
+            color: #32CD32;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Preguntas o Comentarios</h2>
+        <div id="mensaje-exito">¡Mensaje enviado con éxito!</div>
+        <form id="contactForm" method="POST" netlify>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required placeholder="Ingrese su apellido" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="asunto">Observaciones:</label>
+                <textarea id="asunto" name="asunto" required placeholder="Escriba su mensaje aquí"></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit">Enviar</button>
+                <button type="button" class="button-secondary" onclick="window.location.href='somos.html'">Regresar</button>
+            </div>
+        </form>
+        <div id="post-submit-options">
+            <button onclick="nuevoMensaje()">Enviar otro mensaje</button>
+            <button onclick="window.location.href='somos.html'" class="button-secondary">Regresar al inicio</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const postSubmitOptions = document.getElementById('post-submit-options');
+        const mensajeExito = document.getElementById('mensaje-exito');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    mensajeExito.style.display = 'block';
+                    postSubmitOptions.style.display = 'block';
+                } else {
+                    throw new Error('Error en el envío');
+                }
+            } catch (error) {
+                alert('Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo.');
+            }
+        });
+
+        function nuevoMensaje() {
+            form.reset();
+            form.style.display = 'block';
+            mensajeExito.style.display = 'none';
+            postSubmitOptions.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

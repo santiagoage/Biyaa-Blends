@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+<div class="formulario">
+    <h1>Inicio de Sesion</h1>
+    <form id="loginForm" onsubmit="return loginUser(event)" action="iniciar.php" method="post">
+        
+        <div class="username">
+        <input type="text" name="txtusuario" id="txtusuario" required autocomplete="off">
+        <label>Nombre de usuario</label>
+        </div>
+        
+        <div class="username">
+        <input type="password" name="txtpassword" id="txtpassword" required autocomplete="off">
+        <label>Contraseña</label>
+        </div>
+        
+        <div class="recordar">¿Olvido su contraseña?</div>
+        <input type="submit" value="iniciar">
+        
+        <div class="registrarse">Quiero hacer el <a href="registro.html">Registro</a>
+        </div>
+
+        <div class="regresar">
+            <a href="index.html" class="btn-regresar">Volver a la página principal</a>
+        </div>
+        
+    </form>
+</div>    
+
+</body>
+</html>

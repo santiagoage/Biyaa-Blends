@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - BI-YAA BLENDS</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Removido la referencia a cart.css para ocultar el carrito -->
+    <style>
+        /* Justificar texto */
+        .abdes, .homedes, .footerdescription {
+            text-align: justify;
+        }
+        
+        /* Mejorar sección de valores */
+        .valores-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+        
+        .valores-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .valores-icon {
+            font-size: 4rem;
+            color: #3cb815;
+            margin-bottom: 1rem;
+            background-color: rgba(60, 184, 21, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .valores-title {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Ajuste para 4 miembros de equipo */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        /* Centrar botón de contacto */
+        .contact-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header" id="header">
+        
+        <nav class="nav container">
+            <a href="#" class="navL">
+                <img src="img/logo.jpg" alt="" class="navL-img">
+            
+            </a>
+
+            <div class="navM" id="nav-menu">
+
+                <ul class="navList">
+                    <li class="navItem">
+                        <a href="#home1" class="navLink active-link">Inicio</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#about1" class="navLink">Misi&oacute;n</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#valores" class="navLink">Valores</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#proceso" class="navLink">Proceso</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#contacto" class="navLink">Contacto</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="index.html" class="button">P&aacute;gina Principal</a>
+                    </li>
+                </ul>
+
+                <div class="navClose" id="nav-close">
+                    <i class="bx bx-x"></i>
+                </div>
+
+            </div>
+
+            <div class="navToggle" id="nav-toggle">
+                <i class="bx bx-grid-alt"></i>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Banner Nosotros -->
+        <section class="home container" id="home1">
+            <div class="homecont grid">
+                <div class="homedata">
+                    <h1 class="homet">Nuestra Historia</h1>
+                    <p class="homedes"> 
+                        Conoce más sobre BI-YAA BLENDS, nuestra misión, visión y los valores que nos distinguen en el mercado de productos naturales y saludables.
+                    </p>
+                </div>
+                <div class="homeg">
+                    <img src="img/nosotros.jpg" class="homeimg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Misión y Visión -->
+        <section class="section about" id="about1">
+            <div class="abcontainer container grid">
+                <div class="abdata">
+                    <h2 class="stitle abti">Misión</h2>
+                    <p class="abdes">
+                        A través de nuestra harina de nopal, buscamos contribuir a una alimentación balanceada y accesible, generando conciencia sobre los beneficios de esta planta en la lucha contra problemas de salud como la obesidad, diabetes y malnutrición. De esta manera, promovemos una alimentación consciente que beneficie tanto a la comunidad como al medio ambiente.    
+                    </p>
+                </div>
+                <div class="abdata">
+                    <h2 class="stitle abti">Visión</h2>
+                    <p class="abdes">
+                        Buscamos revolucionar la industria de los alimentos, brindando opciones saludables y asequibles que eleven la calidad de vida de la población, al mismo tiempo que promovemos el respeto por la naturaleza y el crecimiento de comunidades agrícolas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valores -->
+        <section class="section product" id="valores">
+            <h2 class="stitle">Nuestros Valores</h2>
+            <div class="pdcontainer container grid">
+                <div class="pdcontent">
+                    <div class="valores-card">
+                        <div class="valores-icon">
+                            <i class='bx bx-leaf'></i>
+                        </div>
+                        <h3 class="valores-title">Sostenibilidad</h3>
+                        <p class="abdes">Nos comprometemos a utilizar prácticas agrícolas responsables que respeten y preserven el medio ambiente.</p>
+                    </div>
+                </div>
+
+                <div class="pdcontent">
+                    <div class="valores-card">
+                        <div class="valores-icon">
+                            <i class='bx bx-check-shield'></i>
+                        </div>
+                        <h3 class="valores-title">Calidad</h3>
+                        <p class="abdes">Garantizamos productos de la más alta calidad, seleccionando cuidadosamente cada materia prima.</p>
+                    </div>
+                </div>
+
+                <div class="pdcontent">
+                    <div class="valores-card">
+                        <div class="valores-icon">
+                            <i class='bx bx-bulb'></i>
+                        </div>
+                        <h3 class="valores-title">Innovación</h3>
+                        <p class="abdes">Buscamos constantemente nuevas formas de mejorar nuestros productos y procesos para ofrecer lo mejor a nuestros clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de Producción -->
+        <section class="section about" id="proceso">
+            <h2 class="stitle">Nuestro Proceso</h2>
+            <div class="abcontainer container grid">
+                <img src="img/harina.jpg" class="aboutimg" alt="">
+                <div class="abdata">
+                    <h3 class="pdtitle">Del Cultivo a Tu Mesa</h3>
+                    <p class="abdes">
+                        Nuestro proceso de producción de harina de nopal comienza con la selección cuidadosa de los mejores nopales cultivados de manera sustentable. Seguimos un riguroso proceso de limpieza, deshidratación y molienda para obtener una harina de la más alta calidad, conservando todos los nutrientes y beneficios del nopal fresco.
+                    </p>
+                    <p class="abdes">
+                        Cada lote de producción pasa por estrictos controles de calidad antes de llegar a las manos de nuestros clientes, garantizando un producto seguro, nutritivo y delicioso.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipo - Modificado para 4 integrantes -->
+        <section class="section product">
+            <h2 class="stitle">Nuestro Equipo</h2>
+            <div class="container">
+                <div class="team-container">
+                    <div class="team-member">
+                        <img src="img/avatar.jpg" class="productimg" alt="" style="border-radius: 50%;">
+                        <h3 class="pdtitle">Angel Santiago Gonz&aacute;lez Estudilo</h3>
+                        <span class="pdsub">Programaci&oacute;n</span>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="img/avatar.jpg" class="productimg" alt="" style="border-radius: 50%;">
+                        <h3 class="pdtitle">Carlos Gabriel Trejo Napoles</h3>
+                        <span class="pdsub">Programaci&oacute;n</span>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="img/avatar.jpg" class="productimg" alt="" style="border-radius: 50%;">
+                        <h3 class="pdtitle">Estefani Lilian Laguna &Aacute;vila</h3>
+                        <span class="pdsub">R.H</span>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="img/avatar.jpg" class="productimg" alt="" style="border-radius: 50%;">
+                        <h3 class="pdtitle">Gloria Estefany Soto Barrios</h3>
+                        <span class="pdsub">Contador</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="section about" id="contacto">
+            <h2 class="stitle">Contáctanos</h2>
+            <div class="abcontainer container">
+                <div class="abdata" style="text-align: center; margin: 0 auto;">
+                    <p class="abdes" style="text-align: center;">
+                        ¿Tienes alguna pregunta o comentario? Nos encantaría escucharte.
+                    </p>
+                    <p class="abdes" style="text-align: center;">
+                        <i class='bx bx-envelope'></i> info@biyaablends.com<br>
+                        <i class='bx bx-phone'></i> +52 123 456 7890<br>
+                        <i class='bx bx-map'></i> Ixtlahuacan, Alcaldía: Iztapalapa, Ciudad de México
+                    </p>
+                    <div class="contact-button-container">
+                        <a href="info.html" class="button">Enviar Mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer section">
+
+        <div class="ftcontainer container grid">
+
+            <div class="ftcontent">
+
+                <a href="#" class="footerL">
+                    <img src="img/favicon.png" class="footerL-img" alt="">
+                    BI-YAA BLENDS
+                </a>
+
+                <p class="footerdescription">Harina de nopal nutritiva y saludable<br>para una alimentación balanceada.</p>
+
+                <div class="footersocial">
+
+                    <a href="https://www.facebook.com/cetis42.cdmx?ref=embed_page" target="_black" class="footersocial-link">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="#" target="_black" class="footersocial-link">
+                        <i class="bx bxl-instagram-alt"></i>
+                    </a>
+
+                    <a href="#" target="_black" class="footersocial-link">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="ftcontent">
+
+                <h3 class="ftti">Nosotros</h3>
+                <ul class="ftli">
+                    <li>
+                        <a href="somos.html" class="ftrli">Nuestra Historia</a>
+                    </li>
+                    <li>
+                        <a href="somos.html" class="ftrli">Misión y Visión</a>
+                    </li>
+                    <li>
+                        <a href="info.html" class="ftrli">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ftcontent">
+
+                <h3 class="ftti">Productos</h3>
+                <ul class="ftli">
+                    <li>
+                        <a href="index.html#product" class="ftrli">Harina de Nopal</a>
+                    </li>
+                    <li>
+                        <a href="index.html#product" class="ftrli">Promociones</a>
+                    </li>
+                    <li>
+                        <a href="#" class="ftrli">Recetas</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ftcontent">
+
+                <h3 class="ftti">Soporte</h3>
+                <ul class="ftli">
+                    <li>
+                        <a href="soporte.html" class="ftrli">Preguntas Frecuentes</a>
+                    </li>
+                    <li>
+                        <a href="soporte.html" class="ftrli">Servicio al Cliente</a>
+                    </li>
+                    <li>
+                        <a href="soporte.html" class="ftrli">Envíos</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <span class="footercopy">&#169; Biyaa-Blends 2025</span>
+
+    </footer>
+
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        console.log("Verificando sesión...");
+        console.log("Usuario actual:", localStorage.getItem('currentUser'));
+    </script>
+    <script src="js/sesion.js"></script>
+      
+</body>
+</html>
